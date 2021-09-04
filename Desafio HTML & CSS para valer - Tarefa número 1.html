@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio HTML & CSS para valer - Tarefa número 1</title>
+</head>
+<body>
+    <style>
+        body {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            margin:0;
+            padding:0;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #111;
+            display: grid;
+            grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+            grid-template-rows: 50% 50%;
+            overflow-y: hidden;
+            overflow-x: hidden;
+        }
+        .cartao1, .cartao2, .cartao3, .cartao4, .cartao5,
+        .cartao6, .cartao7, .cartao8, .cartao9, .cartao10,
+        .cartao11, .cartao12, .cartao13, .cartao14, .cartao15,
+        .cartao16, .cartao17, .cartao18, .cartao19, .cartao20 {
+            position: relative;
+            width: 10vw;
+            height: 50vh;
+            transform-style:preserve-3d; 
+        }
+        .cartao1 {
+            display:grid;
+            grid-column: 1/1;
+            grid-row: 1/1;
+        }
+        .cartao2 {
+            display:grid;
+            grid-column: 2/2;
+            grid-row: 1/1;
+        }
+        .cartao3 {
+            display:grid;
+            grid-column: 3/3;
+            grid-row: 1/1;
+        }
+        .cartao4 {
+            display:grid;
+            grid-column: 4/4;
+            grid-row: 1/1;
+        }
+        .cartao5 {
+            display:grid;
+            grid-column: 5/5;
+            grid-row: 1/1;
+        }
+        .cartao6 {
+            display:grid;
+            grid-column: 6/6;
+            grid-row: 1/1;
+        }
+        .cartao7 {
+            display:grid;
+            grid-column: 7/7;
+            grid-row: 1/1;
+        }
+        .cartao8 {
+            display:grid;
+            grid-column: 8/8;
+            grid-row: 1/1;
+        }
+        .cartao9 {
+            display:grid;
+            grid-column: 9/9;
+            grid-row: 1/1;
+        }
+        .cartao10 {
+            display:grid;
+            grid-column: 10/10;
+            grid-row: 1/1;
+        }
+        .cartao11 {
+            display:grid;
+            grid-column: 1/1;
+            grid-row: 2/2;
+        }
+        .cartao12 {
+            display:grid;
+            grid-column: 2/2;
+            grid-row: 2/2;
+        }
+        .cartao13 {
+            display:grid;
+            grid-column: 3/3;
+            grid-row: 2/2;
+        }
+        .cartao14 {
+            display:grid;
+            grid-column: 4/4;
+            grid-row: 2/2;
+        }
+        .cartao15 {
+            display:grid;
+            grid-column: 5/5;
+            grid-row: 2/2;
+        }
+        .cartao16 {
+            display:grid;
+            grid-column: 6/6;
+            grid-row: 2/2;
+        }
+        .cartao17 {
+            display:grid;
+            grid-column: 7/7;
+            grid-row: 2/2;
+        }
+        .cartao18 {
+            display:grid;
+            grid-column: 8/8;
+            grid-row: 2/2;
+        }
+        .cartao19 {
+            display:grid;
+            grid-column: 9/9;
+            grid-row: 2/2;
+        }
+        .cartao20 {
+            display:grid;
+            grid-column: 10/10;
+            grid-row: 2/2;
+        }
+        .cartao1 .parte1, .cartao2 .parte2, .cartao3 .parte3, .cartao4 .parte4,
+        .cartao5 .parte5, .cartao6 .parte6, .cartao7 .parte7, .cartao8 .parte8,
+        .cartao9 .parte9, .cartao10 .parte10, .cartao11 .parte11, .cartao12 .parte12,
+        .cartao13 .parte13, .cartao14 .parte14, .cartao15 .parte15, .cartao16 .parte16,
+        .cartao17 .parte17, .cartao18 .parte18, .cartao19 .parte19, .cartao20 .parte20 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            backface-visibility: hidden;
+            transition: 2s ease-in-out;
+            transform:perspective(500px) rotateY(0deg);
+        }
+        .cartao1 .parte1.frente1, 
+        .cartao3 .parte3.frente3, 
+        .cartao5 .parte5.frente5, 
+        .cartao7 .parte7.frente7, 
+        .cartao9 .parte9.frente9, 
+        .cartao12 .parte12.frente12,
+        .cartao14 .parte14.frente14,
+        .cartao16 .parte16.frente16,
+        .cartao18 .parte18.frente18,
+        .cartao20 .parte20.frente20 {
+            background:#3bc2ff;
+            color:#000fff;
+        }
+        .cartao2 .parte2.frente2,.cartao4 .parte4.frente4,
+        .cartao6 .parte6.frente6,.cartao8 .parte8.frente8,
+        .cartao10 .parte10.frente10, .cartao11 .parte11.frente11,
+        .cartao13 .parte13.frente13, .cartao15 .parte15.frente15,
+        .cartao17 .parte17.frente17,.cartao19 .parte19.frente19 {
+            background:#ffffff;
+            color:#000fff;
+        }
+        .cartao1:hover .parte1.frente1 , .cartao2:hover .parte2.frente2,
+        .cartao3:hover .parte3.frente3 , .cartao4:hover .parte4.frente4,
+        .cartao5:hover .parte5.frente5 , .cartao6:hover .parte6.frente6,
+        .cartao7:hover .parte7.frente7 , .cartao8:hover .parte8.frente8,
+        .cartao9:hover .parte9.frente9 , .cartao10:hover .parte10.frente10,
+        .cartao11:hover .parte11.frente11 , .cartao12:hover .parte12.frente12,
+        .cartao13:hover .parte13.frente13 , .cartao14:hover .parte14.frente14,
+        .cartao15:hover .parte15.frente15 , .cartao16:hover .parte16.frente16,
+        .cartao17:hover .parte17.frente17 , .cartao18:hover .parte18.frente18,
+        .cartao19:hover .parte19.frente19 , .cartao20:hover .parte20.frente20{
+            transform:perspective(500px) rotateY(180deg);
+        }
+        .cartao1 .parte1.verso1, 
+        .cartao3 .parte3.verso3, 
+        .cartao5 .parte5.verso5, 
+        .cartao7 .parte7.verso7, 
+        .cartao9 .parte9.verso9, 
+        .cartao12 .parte12.verso12,
+        .cartao14 .parte14.verso14,
+        .cartao16 .parte16.verso16,
+        .cartao18 .parte18.verso18,
+        .cartao20 .parte20.verso20{
+            font-size: 15px;
+            text-shadow: lightskyblue;
+            text-transform: uppercase;
+            transform: perspective(500px) rotateY(180deg) translateZ(50px);
+            display: flex;
+            text-align: center;
+            justify-content: center;
+        }
+        .cartao1 .parte1.verso1 {
+            background-image: url(media/senaienquadrado.png);
+            background-size: 10vw;
+        }
+        .cartao3 .parte3.verso3 {
+            background-image: url(media/etecenquadrado.png);
+            background-size: 10vw;
+        }
+        .cartao5 .parte5.verso5 {
+            background-image: url(media/proaenquadrado.jpg);
+            background-size: 10vw;
+        }
+        .cartao7 .parte7.verso7 {
+            background-image: url(media/pesoenquadrado.jpg);
+            background-size: 10vw;
+        }
+        .cartao9 .parte9.verso9 {
+            background-image: url(media/scottenquadrado.jpg);
+            background-size: 10vw;
+        }
+        .cartao12 .parte12.verso12 {
+            background-image: url(media/cockpit.jpg);
+            background-size: 10vw;
+        }
+        .cartao14 .parte14.verso14 {
+            background-image: url(media/roboenquadrado.png);
+            background-size: 10vw;
+        }
+        .cartao16 .parte16.verso16 {
+            background-image: url(media/teatroenquadrado.jpg);
+            background-size: 10vw;
+        }
+        .cartao18 .parte18.verso18 {
+            background-image: url(media/boloaniversarioenquadrado.jpg);
+            background-size: 10vw;
+        }
+        .cartao20 .parte20.verso20 {
+            background-image: url(media/bolodecenouraenquadrado.jpg);
+            background-size: 10vw;
+        }
+        .cartao2 .parte2.verso2, .cartao4 .parte4.verso4,
+        .cartao6 .parte6.verso6, .cartao8 .parte8.verso8,
+        .cartao10 .parte10.verso10, .cartao11 .parte11.verso11,
+        .cartao13 .parte13.verso13, .cartao15 .parte15.verso15, 
+        .cartao17 .parte17.verso17, .cartao19 .parte19.verso19 {
+            color:#000fff;
+            font-size: 15px;
+            text-shadow: lightskyblue;
+            text-transform: uppercase;
+            transform: perspective(500px) rotateY(180deg) translateZ(50px);
+            display: flex;
+            text-align: center;
+            justify-content: center;
+        }
+        .cartao2 .parte2.verso2 {
+            background-image: url(media/senaienquadrado.png);
+            background-size: 10vw;
+        }
+        .cartao4 .parte4.verso4 {
+            background-image: url(media/uspenquadrado.jpg);
+            background-size: 10vw;
+        }
+        .cartao6 .parte6.verso6 {
+            background-image: url(media/livrosenquadrado.jpg);
+            background-size: 10vw;
+        }
+        .cartao8 .parte8.verso8 {
+            background-image: url(media/jogosenquadrado.jpg);
+            background-size: 10vw;
+        }
+        .cartao10 .parte10.verso10 {
+            background-image: url(media/codigoenquadrado.jpg);
+            background-size: 10vw;
+        }
+        .cartao11 .parte11.verso11 {
+            background-image: url(media/boxeenquadrado.jpg);
+            background-size: 10vw;
+        }
+        .cartao13 .parte13.verso13 {
+            background-image: url(media/moneyenquadrado.jpg);
+            background-size: 10vw;
+        }
+        .cartao15 .parte15.verso15 {
+            background-image: url(media/grad.jpg);
+            background-size: 10vw;
+        }
+        .cartao17 .parte17.verso17 {
+            background-image: url(media/gatosenquadrados.jpg);
+            background-size: 10vw;
+        }
+        .cartao19 .parte19.verso19 {
+            background-image: url(media/cambridgeenquadrado.png);
+            background-size: 10vw;
+        }
+        .cartao1:hover .parte1.verso1, .cartao2:hover .parte2.verso2,
+        .cartao3:hover .parte3.verso3, .cartao4:hover .parte4.verso4,
+        .cartao5:hover .parte5.verso5, .cartao6:hover .parte6.verso6,
+        .cartao7:hover .parte7.verso7, .cartao8:hover .parte8.verso8,
+        .cartao9:hover .parte9.verso9, .cartao10:hover .parte10.verso10,
+        .cartao11:hover .parte11.verso11, .cartao12:hover .parte12.verso12,
+        .cartao13:hover .parte13.verso13, .cartao14:hover .parte14.verso14,
+        .cartao15:hover .parte15.verso15, .cartao16:hover .parte16.verso16,
+        .cartao17:hover .parte17.verso17, .cartao18:hover .parte18.verso18,
+        .cartao19:hover .parte19.verso19, .cartao20:hover .parte20.verso20 {
+            transform:perspective(500px) rotateY(360deg);
+        }
+        .cartao1 .parte1 h2, .cartao2 .parte2 h2, .cartao3 .parte3 h2, 
+        .cartao4 .parte4 h2, .cartao5 .parte5 h2, .cartao6 .parte6 h2,
+        .cartao7 .parte7 h2, .cartao8 .parte8 h2, .cartao9 .parte9 h2,
+        .cartao10 .parte10 h2, .cartao11 .parte11 h2, .cartao12 .parte12 h2,
+        .cartao13 .parte13 h2, .cartao14 .parte14 h2, .cartao15 .parte15 h2,
+        .cartao16 .parte16 h2, .cartao17 .parte17 h2, .cartao18 .parte18 h2,
+        .cartao19 .parte19 h2, .cartao20 .parte20 h2 {
+            font-size: 150px;
+            text-shadow: gray;
+            text-transform: uppercase;
+            transform: perspective(500px) translateZ(50px);
+        }
+        h3 {
+            display: flex;
+            justify-content: center;
+            background-color: white;
+            opacity: 70%;
+            color: black;
+        }
+    </style>
+    <div class="cartao1">
+        <div class="parte1 frente1">
+            <h2>S</h2>
+        </div>
+        <div class="parte1 verso1">
+            <h3>
+                Aspecto Profissional 1: Eu sou formado Técnico em Mecatrônica
+            </h3> 
+        </div>
+    </div>
+    <div class="cartao2">
+        <div class="parte2 frente2">
+            <h2>E</h2>
+        </div>
+        <div class="parte2 verso2">
+            <h3>
+                Aspecto Profissional 2: Eu sou formado Mecânico de Usinagem
+            </h3>
+        </div>
+    </div>
+    <div class="cartao3">
+        <div class="parte3 frente3">
+            <h2>J</h2>
+        </div>
+        <div class="parte3 verso3">
+            <h3>
+                Aspecto Profissional 3: Eu sou formado Técnico em Automação Industrial
+            </h3>
+        </div>
+    </div>
+    <div class="cartao4">
+        <div class="parte4 frente4">
+            <h2>A</h2>
+        </div>
+        <div class="parte4 verso4">
+            <h3>
+                Aspecto Profissional 4: Eu estou cursando Engenharia Mecatrônica
+            </h3>
+        </div>
+    </div>
+    <div class="cartao5">
+        <div class="parte5 frente5">
+            <h2>B</h2>
+        </div>
+        <div class="parte5 verso5">
+            <h3 background="ffffff">
+                Aspecto <br> Profissonal <br> 5: Eu estou fazendo um curso de Desenvolvedor WEB Java
+            </h3>
+        </div>
+    </div>
+    <div class="cartao6">
+        <div class="parte6 frente6">
+            <h2>E</h2>
+        </div>
+        <div class="parte6 verso6">
+            <h3>
+                Hobbie 1: Eu gosto de ler
+            </h3>
+        </div>
+    </div>
+    <div class="cartao7">
+        <div class="parte7 frente7">
+            <h2>M</h2>
+        </div>
+        <div class="parte7 verso7">
+            <h3>
+                Hobbie 2: Eu gosto de fazer exercícios
+            </h3>
+        </div>
+    </div>
+    <div class="cartao8">
+        <div class="parte8 frente8">
+            <h2>V</h2>
+        </div>
+        <div class="parte8 verso8">
+            <h3>
+                Hobbie 3: Eu gosto de jogos eletrônicos
+            </h3>
+        </div>
+    </div>
+    <div class="cartao9">
+        <div class="parte9 frente9">
+            <h2>I</h2>
+        </div>
+        <div class="parte9 verso9">
+            <h3>
+                Hobbie 4: Eu gosto de histórias em quadrinhos
+            </h3>
+        </div>
+    </div>
+    <div class="cartao10">
+        <div class="parte10 frente10">
+            <h2>N</h2>
+        </div>
+        <div class="parte10 verso10">
+            <h3>
+                Hobbie 5: Eu gosto de tecnologia
+            </h3>
+        </div>
+    </div>
+    <div class="cartao11">
+        <div class="parte11 frente11">
+            <h2>D</h2>
+        </div>
+        <div class="parte11 verso11">
+            <h3>
+                Coisas que eu quero fazer 1: Lutar Boxe
+            </h3>
+        </div>
+    </div>
+    <div class="cartao12">
+        <div class="parte12 frente12">
+            <h2>O</h2>
+        </div>
+        <div class="parte12 verso12">
+            <h3>
+                Coisas que eu quero fazer 2: Dirigir
+            </h3>
+        </div>
+    </div>
+    <div class="cartao13">
+        <div class="parte13 frente13">
+            <h2>A</h2>
+        </div>
+        <div class="parte13 verso13">
+            <h3>
+                Coisas que eu quero fazer 3: Trabalhar
+            </h3>
+        </div>
+    </div>
+    <div class="cartao14">
+        <div class="parte14 frente14">
+            <h2>O</h2>
+        </div>
+        <div class="parte14 verso14">
+            <h3>
+                Coisas que eu quero fazer 4: Construir um Robô
+            </h3>
+        </div>
+    </div>
+    <div class="cartao15">
+        <div class="parte15 frente15">
+            <h2>S</h2>
+        </div>
+        <div class="parte15 verso15">
+            <h3>
+                Coisas que eu quero fazer 5: Me formar na faculdade
+            </h3>
+        </div>
+    </div>
+    <div class="cartao16">
+        <div class="parte16 frente16">
+            <h2>I</h2>
+        </div>
+        <div class="parte16 verso16">
+            <h3>
+                Curiosidade 1: Eu já participei de uma peça de teatro  
+            </h3>
+        </div>
+    </div>
+    <div class="cartao17">
+        <div class="parte17 frente17">
+            <h2>T</h2>
+        </div>
+        <div class="parte17 verso17">
+            <h3>
+                Curiosidade 2: Eu já tive dois gatos de estimação
+            </h3>
+        </div>
+    </div>
+    <div class="cartao18">
+        <div class="parte18 frente18">
+            <h2>E</h2>
+        </div>
+        <div class="parte18 verso18">
+            <h3>
+                Curiosidade 3: Meu aniversário é em setembro 
+            </h3>
+        </div>
+    </div>
+    <div class="cartao19">
+        <div class="parte19 frente19">
+            <h2>3</h2>
+        </div>
+        <div class="parte19 verso19">
+            <h3>
+                Curiosidade 4: Sou fluente em inglês
+            </h3>
+        </div>
+    </div>
+    <div class="cartao20">
+        <div class="parte20 frente20">
+            <h2>D</h2>
+        </div>
+        <div class="parte20 verso20">
+            <h3>Curiosidade 5: Eu gosto de bolo de cenoura</h3>
+        </div>
+    </div>
+</body>
+</html>
